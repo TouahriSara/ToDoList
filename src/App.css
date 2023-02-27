@@ -1,38 +1,110 @@
-.App {
+.TodoList {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.TodoList h1 {
   text-align: center;
+  margin-bottom: 20px;
+  font-size: 36px;
+  color: #555;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.TodoList form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.TodoList input[type="text"] {
+  flex: 1;
+  border: none;
+  border-bottom: 2px solid #bbb;
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.TodoList input[type="text"]:focus {
+  border-color: #0077ff;
+}
+
+.TodoList button[type="submit"] {
+  background-color: #0077ff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 10px;
+}
+
+.TodoList button[type="submit"]:hover {
+  background-color: #0051a8;
+}
+
+.TodoList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.TodoList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s;
+}
+
+.TodoList li.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.TodoList li:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.TodoList li span {
+  flex: 1;
+  color: #555;
+}
+
+.TodoList li div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.TodoList li button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+  transition: transform 0.3s;
+  color: #888;
+}
+
+.TodoList li button:hover {
+  transform: scale(1.2);
+  color: #555;
+}
+
+.TodoList li button:first-child {
+  color: #0077ff;
+}
+
+.TodoList li button:last-child {
+  color: #ff0033;
 }
